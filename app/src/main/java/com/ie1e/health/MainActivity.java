@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+
+import com.ie1e.health.Util.ImageUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        ImageView testImage = (ImageView)findViewById(R.id.testImage);
+        ImageUtil.loader("https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1784234501,600865947&fm=58",testImage);
     }
 
     @Override
