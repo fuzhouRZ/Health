@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ie1e.health">
-<!--测试团队协作-->
+    <!--测试团队协作-->
     <application
         android:name=".Cogfig.HealthApplication"
         android:allowBackup="true"
@@ -80,14 +80,17 @@
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
-
+        <!--渠道名称-->
+        <meta-data
+            android:name="ALIYUN_MAN_CHANNEL"
+            android:value="kaifa" />
+        <meta-data
+            android:name="com.alibaba.app.appkey"
+            android:value="23393816" /> <!-- 请填写你自己的- appKey -->
+        <meta-data
+            android:name="com.alibaba.app.appsecret"
+            android:value="a5869515c65bb4ce9a816dc63ba437b9" /> <!-- 请填写你自己的appSecret -->
     </application>
-    <meta-data
-        android:name="com.alibaba.app.appkey"
-        android:value="23393816" /> <!-- 请填写你自己的- appKey -->
-    <meta-data
-        android:name="com.alibaba.app.appsecret"
-        android:value="a5869515c65bb4ce9a816dc63ba437b9" /> <!-- 请填写你自己的appSecret -->
     <!--阿里移动推送相关权限-->
     <!--Android 6.0版本可去除，用于选举信息（通道复用）的同步-->
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
@@ -113,5 +116,12 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <!--允许访问震动器-->
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
+
+    <uses-permission android:name="android.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.CHANGEWIFISTATE" />
 </manifest>

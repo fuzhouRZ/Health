@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import com.alibaba.sdk.android.man.MANService;
+import com.alibaba.sdk.android.man.MANServiceProvider;
 import com.ie1e.health.Util.ImageUtil;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,8 +32,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ImageView testImage = (ImageView)findViewById(R.id.testImage);
-        ImageUtil.loader("https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1784234501,600865947&fm=58",testImage);
+        ImageView testImage = (ImageView) findViewById(R.id.testImage);
+        ImageUtil.loader("https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1784234501,600865947&fm=58", testImage);
+
+        MANService manService = MANServiceProvider.getService();
+        // 注册用户埋点
+        manService.getMANAnalytics().userRegister("usernick");
+
+        // 用户登录埋点
+        manService.getMANAnalytics().updateUserAccount("usernick", "102123354742kjhhjf");
     }
 
     @Override
