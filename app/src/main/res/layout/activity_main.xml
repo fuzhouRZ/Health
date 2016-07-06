@@ -1,34 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@mipmap/index_bg"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.ie1e.health.MainActivity">
-
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_main" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/index_tit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email" />
+        android:id="@+id/imageView2" />
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_center"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:src="@mipmap/per_pic"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+    <FrameLayout
+        android:layout_centerInParent="true"
+        android:background="@mipmap/per_pic_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/frameLayout">
+        <ImageView
+            android:id="@+id/iv_zhzx"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:src="@mipmap/per_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-</android.support.design.widget.CoordinatorLayout>
+    </FrameLayout>
+
+    <ImageView
+        android:src="@mipmap/nav_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_yyjy"
+        android:layout_above="@+id/frameLayout"
+        android:layout_toLeftOf="@+id/frameLayout" />
+    <ImageView
+        android:src="@mipmap/nav_02"
+        android:id="@+id/iv_jksj"
+        android:layout_above="@+id/frameLayout"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@+id/frameLayout"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:src="@mipmap/nav_03"
+        android:id="@+id/iv_tsfw"
+        android:layout_below="@+id/frameLayout"
+        android:layout_width="wrap_content"
+        android:layout_toLeftOf="@+id/frameLayout"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:src="@mipmap/nav_04"
+        android:id="@+id/iv_ylzx"
+        android:layout_below="@+id/frameLayout"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@+id/frameLayout"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/frameLayout"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/main_txt_color"
+        android:text="账户中心"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:textColor="@color/main_txt_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="预约就医"
+        android:id="@+id/textView"
+        android:layout_marginTop="19dp"
+        android:layout_alignTop="@+id/frameLayout"
+        android:layout_alignLeft="@+id/iv_yyjy"
+        android:layout_alignStart="@+id/iv_yyjy"
+        android:layout_toLeftOf="@+id/imageView2"
+        android:layout_toStartOf="@+id/imageView2" />
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:textColor="@color/main_txt_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="健康数据"
+        android:id="@+id/textView2"
+        android:layout_alignTop="@+id/textView"
+        android:layout_toRightOf="@+id/imageView2"
+        android:layout_alignRight="@+id/iv_jksj"
+        android:layout_alignEnd="@+id/iv_jksj" />
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:textColor="@color/main_txt_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="特色服务"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/iv_tsfw"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_marginTop="18dp"
+        android:layout_alignLeft="@+id/iv_tsfw"
+        android:layout_alignStart="@+id/iv_tsfw" />
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="医疗咨询"
+        android:textColor="@color/main_txt_color"
+        android:id="@+id/textView4"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_alignRight="@+id/iv_ylzx"
+        android:layout_alignEnd="@+id/iv_ylzx" />
+
+
+</RelativeLayout>
